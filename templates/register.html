@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Регистрация</title>
+    </head>
+    <body>
+        <h1>Регистрация</h1>
+      <div id="wrapper">
+              {% for msg in get_flashed_messages() %}
+        <div class="alert alert-warning">{{msg}}</div>
+        {% endfor %}
+          {% for category, message in  get_flashed_messages(with_categories=true) %}
+        <spam class="{{ category }}">{{ message }}</spam>
+          {% endfor %}
+          <form id="signin" method="post" action="" autocomplete="off">
+              <input type="text" id="user" name="user" placeholder="Логин" />
+              <input type="password" id="pass" name="pass" placeholder="Пароль" />
+              <input type="password" id="pass2" name="pass2" placeholder="Повтор пароля" />
+              <button type="submit">&#xf0da;</button>
+              <p>forgot your password? <a href="#">click here</a></p>
+          </form>
+      </div>
+        
+        
+      </body>
+
+</html>
